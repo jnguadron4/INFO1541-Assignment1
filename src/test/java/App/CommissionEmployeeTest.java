@@ -38,4 +38,17 @@ public class CommissionEmployeeTest {
         assertEquals(expectedBonus, emp.holidayBonus());
     }
 
+
+    @Test
+    void annualRaiseShouldIncreaseRateCorrectly() {
+       Double expectedRaiseRate = 0.0305;
+
+       //  Call annualRaise() two times
+        emp.annualRaise();
+        emp.annualRaise();
+
+        // Step 2: Check rate after second raise
+        double rateAfterSecondRaise = emp.getRate();
+        assertEquals(expectedRaiseRate, rateAfterSecondRaise);
+    }
 }
