@@ -29,4 +29,13 @@ public class CommissionEmployeeTest {
         // Step 6: Check that sales increased by 3000
         assertEquals(8000, emp.getSales());
     }
+
+    @Test
+    void holidayBonusShouldBeZeroForCommissionEmployee() {
+        // Step 1: Check that the holiday bonus is 0 for commission employees
+        double expectedBonus = 0;
+        // Step 2: Check if the holiday bonus is correctly returned as 0
+        assertEquals(expectedBonus, emp.holidayBonus());
+    }
+
 }
