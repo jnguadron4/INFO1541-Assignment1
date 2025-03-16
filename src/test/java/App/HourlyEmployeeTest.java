@@ -43,4 +43,30 @@ public class HourlyEmployeeTest {
         assertEquals(expectedWage, emp.getWage());
     }
 
+
+    @Test
+    void weeklyPayFor35HoursShouldBeCorrect() {
+        // Set hours to 35 (No overtime)
+        emp.increaseHours(35);
+        // Expected weekly pay: 35 * $32.85 = $1149.75
+        double expectedPay = 1149.75;
+
+        assertEquals(expectedPay, emp.calculateWeeklyPay());
+    }
+
+
+    @Test
+    void weeklyPayFor45HoursShouldIncludeOvertime() {
+        // Set hours to 45 (Overtime applies)
+        emp.increaseHours(45);
+
+        // Expected weekly pay:
+        // 40 * $32.85 + (5 * ($32.85 * 1.5))
+        // = 1314.00 + 246.38 = $1560.38
+        double expectedPay = 1560.38;
+        double actualPay = Math.round(emp.calculateWeeklyPay() * 100.0) / 100.0;
+        assertEquals(expectedPay, actualPay);
+
+    }
+
 }
