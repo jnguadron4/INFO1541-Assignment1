@@ -45,6 +45,6 @@ public class SalaryEmployeeTest {
         expectedBonus = Math.round(expectedBonus * 100.0) / 100.0;
 
         // Step 4: Check if the method works correctly
-        assertEquals(expectedBonus, actualBonus, "Steve's holiday bonus should be $2164.54.");
+        assertEquals(expectedBonus, actualBonus);
     }
 }
