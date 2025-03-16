@@ -31,4 +31,16 @@ public class HourlyEmployeeTest {
 
     }
 
+    @Test
+    void wageShouldIncreaseByFivePercent() {
+        // Call the annual raise method
+        emp.annualRaise();
+
+        // Expected wage after a 5% raise
+        double expectedWage = 34.49;
+
+        // Check if the new wage is correct
+        assertEquals(expectedWage, emp.getWage());
+    }
+
 }
